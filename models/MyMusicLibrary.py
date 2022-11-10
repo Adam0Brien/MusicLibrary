@@ -1,4 +1,4 @@
-class MyMoviesLibrary(object):
+class MyMusicLibrary(object):
 
     def __init__(self, username, playlistList, allSongsList):
         self.__username = username

@@ -1,9 +1,10 @@
 from models import Song, Playlist, MyMusicLibrary
 
 allSongsList = []
+songsList = []
 
-library = MyMusicLibrary.MyMoviesLibrary("Adams Library", playlistList=[], allSongsList=allSongsList)
-
+library = MyMusicLibrary.MyMusicLibrary("Adams Library", playlistList=[], allSongsList=allSongsList)
+playlist1 = Playlist.Playlist("Adams Playlist", songsList)
 
 def validateInput(choice, min, max):
     if choice in range(min, max):
@@ -48,7 +49,7 @@ def addPlaylist():
     playlistName = input("Playlist name: ")
     songsList = []
 
-    newPlaylist = MyMusicLibrary.MyMoviesLibrary.addPlaylist(playlistName, songsList)
+    newPlaylist = MyMusicLibrary.MyMusicLibrary.addPlaylist(playlistName, songsList)
 
     mainMenu()
 
