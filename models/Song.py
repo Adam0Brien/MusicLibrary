@@ -23,3 +23,7 @@ class Song(object):
 
     def toString(self):
         return self.__tuneName + " " + self.__tuneGroup + " " + self.__tuneYear + " " + self.__tuneGenre + " " + self.__tunePlaylist
+
+
+    def txtString(self):
+        return self.__tuneName + "," + self.__tuneGroup + "," + self.__tuneYear + "," + self.__tuneGenre + "," + self.__tunePlaylist

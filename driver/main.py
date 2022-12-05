@@ -4,12 +4,12 @@ import re
 import urllib.request
 import webbrowser
 
-
 allSongsList = []
 songsList = []
 
 library = MyMusicLibrary.MyMusicLibrary("Adams Library", playlistList=[], allSongsList=allSongsList)
 playlist1 = Playlist.Playlist("Adams Playlist", songsList)
+
 
 def validateInput(choice, min, max):
     if choice in range(min, max):
@@ -26,7 +26,7 @@ def mainMenu():
     print("-----------------")
     print("4) Read in data from txt file")
     print("5) Search for song on Youtube")
-
+    print("10) Exit")
 
     option = int(input("---->"))
 
@@ -42,6 +42,8 @@ def mainMenu():
         readFromFile()
     if option == 5:
         searchYoutube()
+    if option == 10:
+        exit()
     if option > 10:
         print("Please enter a valid option")
         mainMenu()
@@ -54,11 +56,17 @@ def addSong():
     genre = input("Genre: ")
     playlist = input("Playlist: ")
 
-
     newSong = Song.Song(name, group, year, genre, playlist)
     print(newSong.toString())
     allSongsList.append(newSong)
 
+    try:
+        f = open("songs.txt", "a")  # a mode will append to existing file contents
+        f.write(newSong.txtString())
+    except:
+        print("Error: writing to the file")
+    finally:
+        f.close()  # close the file
     mainMenu()
 
 
@@ -79,6 +87,7 @@ def addSongToPlaylist():
 def listSongs():
     for song in allSongsList:
         print(song.toString())
+
 
 def searchSongs():
     fname = "songs.txt"
@@ -104,10 +113,9 @@ def searchSongs():
         print("Error")
 
 
-
-
 def displayGenre():
     print("Print all songs of a certain genre")
+
 
 def deleteSongFromPlaylist():
     print("delete a song from a playlist")
@@ -117,9 +125,9 @@ def readFromFile():
     fname = input("Enter the name of the file you wish to open for reading: ")
 
     try:
-        with open(fname,'r') as myFile:
+        with open(fname, 'r') as myFile:
             for line in myFile:
-                sName,sGroup,sYear,sGenre,sPlaylist = line.split(',')
+                sName, sGroup, sYear, sGenre, sPlaylist = line.split(',')
 
                 newSong = Song.Song(sName, sGroup, sYear, sGenre, sPlaylist)
                 print(newSong.toString())
@@ -134,9 +142,9 @@ def readFromFile():
 
 
 def searchYoutube():
-#https://codefather.tech/blog/youtube-search-python/
+    # https://codefather.tech/blog/youtube-search-python/
     fname = "songs.txt"
-    songName = input("What song are you looking for? --->")
+    songName = input("What song are you looking for? --->").casefold()
     try:
         with open(fname, 'r') as myFile:
             found = 0
@@ -144,7 +152,7 @@ def searchYoutube():
             for line in myFile:  # loop through file line by line
                 index += 1
 
-                if songName in line:
+                if songName in line.casefold(): #casefold ignores case sensitivity
                     found = 1
                     break
 
@@ -152,6 +160,7 @@ def searchYoutube():
                 print("")
                 print('Song Name ', songName, ' not found in file, You cant search if you haven\'t added the song')
                 print("")
+                mainMenu()
             else:
                 html = urllib.request.urlopen("https://www.youtube.com/results?search_query=" + songName.replace(" ", ""))
                 video_ids = re.findall(r"watch\?v=(\S{11})", html.read().decode())
@@ -172,4 +181,3 @@ if __name__ == '__main__':
     startup()
     readFromFile()
     mainMenu()
-
