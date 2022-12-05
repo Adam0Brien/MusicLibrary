@@ -1,0 +1,6 @@
+homecoming,Kanye,2007,rap,Gym
+All I want for Christmas,Mariah Carey,1994,christmas,X-MasPL
+Snowman,sia,2020,christmas,X-MasPL
+Blinding Lights,The Weekend,2019,pop,none
+Heat Waves,Glass Animals,2018,pop,none
+Circles,Post Malone,2017,Hip-Hop,none
