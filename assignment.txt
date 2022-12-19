@@ -1,7 +1,7 @@
-1. Add a new item to the library
-2. Display all items in your Music Library
-3. Search for and display a song (you build the search options)
-4. Search for and display all items from a specific genre (i.e. pop, rock etc) or playlist.
+1. Add a new item to the library done
+2. Display all items in your Music Library done
+3. Search for and display a song (you build the search options) done
+4. Search for and display all items from a specific genre (i.e. pop, rock etc) or playlist.  done
 5. Delete an item from your music library.
 6. Read and Write the library to a file called myMusicLibrary.txt (you should only read once at the beginning of the program and write when user chooses an option to save contents of musicList)
-7. Give the use the functionality to add/remove an track to a play list
+7. Give the use the functionality to add/remove a track to a play list

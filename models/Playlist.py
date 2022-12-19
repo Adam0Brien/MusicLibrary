@@ -14,4 +14,4 @@ class Playlist(object):
         self.__songsList.append(song)
 
     def removeSong(self, song):
-        self.__songsList.remove(song)
+        self.__songsList.pop(song)
