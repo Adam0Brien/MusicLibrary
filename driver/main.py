@@ -218,7 +218,6 @@ def displayGenre(genre):
     for song in filtered_songs:
         print(song)
 
-#TODO
 def deleteSongFromPlaylist():
     for i, playlist in enumerate(library.getPlaylistList()):
 
