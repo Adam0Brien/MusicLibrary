@@ -1,7 +1,20 @@
-homecoming,Kanye,2007,rap,Gym
-All I want for Christmas,Mariah Carey,1994,christmas,X-MasPL
-Snowman,sia,2020,christmas,X-MasPL
-Blinding Lights,The Weekend,2019,pop,none
-Heat Waves,Glass Animals,2018,pop,none
-Circles,Post Malone,2017,Hip-Hop,none
-Old town road,lil nas x,2020,Country,none
+Bohemian Rhapsody, Queen, 1975, Rock, Classic Rock Essentials
+Sweet Child o' Mine, Guns N' Roses, 1988, Rock, 80s Hair Metal Hits
+Piano Man, Billy Joel, 1973, Pop, Singer-Songwriter Classics
+Thriller, Michael Jackson, 1982, Pop, Dance Party playlist
+Stairway to Heaven, Led Zeppelin, 1971, Rock, Rock Anthems
+Hotline Bling, Drake, 2015, Hip Hop, Rap Favorites
+Hey Jude, The Beatles, 1968, Rock, British Invasion Hits
+I Will Always Love You, Whitney Houston, 1992, R&B, 90s Slow Jams
+Rolling in the Deep, Adele, 2010, Pop, Power Ballads
+Sweet Dreams (Are Made of This), Eurythmics, 1983, Pop, Synthpop Classics
+Come Together, The Beatles, 1969, Rock, British Invasion Essentials
+Smooth, Santana feat. Rob Thomas, 1999, Rock, 90s Guitar Heroes
+Billie Jean, Michael Jackson, 1983, Pop, Dancefloor Hits
+Crazy, Gnarls Barkley, 2006, Pop, 00s Pop Essentials
+Walking on Sunshine, Katrina and The Waves, 1985, Pop, 80s Party Jams
+Don't Stop Believin', Journey, 1981, Rock, 80s Arena Rock
+Uptown Funk, Mark Ronson feat. Bruno Mars, 2014, Pop, Funk Revival
+Halo, Beyonce, 2009, R&B, 00s R&B Classics
+Sweet Home Alabama, Lynyrd Skynyrd, 1974, Rock, Southern Rock Essentials
+All About That Bass, Meghan Trainor, 2014, Pop, Pop Hits of the 2010s
