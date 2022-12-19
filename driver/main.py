@@ -23,9 +23,10 @@ def mainMenu():
     print("1) Add a Song")
     print("2) List all Songs")
     print("3) Search song by name")
+    print("4) List all songs of a certain genre")
     print("-----------------")
-    print("4) Read in data from txt file")
-    print("5) Search for song on Youtube")
+    print("5) Read in data from txt file")
+    print("6) Search for song on Youtube")
     print("10) Exit")
 
     option = int(input("---->"))
@@ -39,8 +40,11 @@ def mainMenu():
     if option == 3:
         searchSongs()
     if option == 4:
-        readFromFile()
+        genre = input("What Genre? ---->")
+        displayGenre(genre)
     if option == 5:
+        readFromFile()
+    if option == 6:
         searchYoutube()
     if option == 10:
         exit()
@@ -113,8 +117,11 @@ def searchSongs():
         print("Error")
 
 
-def displayGenre():
-    print("Print all songs of a certain genre")
+def displayGenre(genre):
+    filtered_songs = [song.getTuneName() for song in allSongsList if song.getTuneGenre() == genre]
+
+    for song in filtered_songs:
+        print(song)
 
 
 def deleteSongFromPlaylist():
