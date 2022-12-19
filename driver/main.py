@@ -221,11 +221,13 @@ def displayGenre(genre):
 #TODO
 def deleteSongFromPlaylist():
     for i, playlist in enumerate(library.getPlaylistList()):
-        print(f"{i}: {playlist.getPlaylistName()}")
 
-    selection = int(input("Enter the playlist you want to remove: "))
+        listSongsInPlaylist()
+        selection = int(input("Enter the song you want to remove: ")) - 1
 
-    library.removeSongFromPlaylist(playlist,selection)
+        library.removeSongFromPlaylist(playlist,selection)
+
+    mainMenu()
 
 
 def readFromFile():
