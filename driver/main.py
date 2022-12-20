@@ -51,6 +51,7 @@ def songMenu():
     print("4) List all songs of a certain genre")
     print("5) Search for song on Youtube")
     print("6) Remove a Song")
+    print("7) Back to Main Menu")
     print("10) Exit")
 
     option = int(input("---->"))
@@ -59,17 +60,25 @@ def songMenu():
         option = int(input("---->"))
     if option == 1:
         addSong()
+        songMenu()
     if option == 2:
         listSongs()
+        songMenu()
     if option == 3:
         searchSongs()
+        songMenu()
     if option == 4:
         genre = input("What Genre? ---->")
         displayGenre(genre)
+        songMenu()
     if option == 5:
         searchYoutube()
+        songMenu()
     if option == 6:
         deleteSongFromPlaylist()
+        songMenu()
+    if option == 7:
+        mainMenu()
     if option == 10:
         exit()
     if option > 10:
@@ -84,6 +93,7 @@ def playlistMenu():
     print("3) Add a song to a Playlist")
     print("4) List all songs in playlist")
     print("5) Remove a Playlist")
+    print("6) Back to Main menu")
 
     option = int(input("---->"))
 
@@ -91,14 +101,21 @@ def playlistMenu():
         option = int(input("---->"))
     if option == 1:
         addPlaylistToLibrary()
+        playlistMenu()
     if option == 2:
         listPlaylists()
+        playlistMenu()
     if option == 3:
         addSongToPlaylist()
+        playlistMenu()
     if option == 4:
         listSongsInPlaylist()
+        playlistMenu()
     if option == 5:
         removeAPlaylist()
+        playlistMenu()
+    if option == 6:
+        mainMenu()
     if option > 10:
         print("Please enter a valid option")
         mainMenu()
@@ -122,7 +139,7 @@ def addSong():
         print("Error: writing to the file")
     finally:
         f.close()  # close the file
-    mainMenu()
+
 
 
 # TODO
@@ -135,7 +152,7 @@ def addPlaylistToLibrary():
     library.addPlaylist(newPlaylist)
 
     listPlaylists()
-    mainMenu()
+
 
 def removeAPlaylist():
     for i, playlist in enumerate(library.getPlaylistList()):
@@ -149,16 +166,13 @@ def removeAPlaylist():
 def addSongToPlaylist():
     for i, playlist in enumerate(library.getPlaylistList()):
         print(f"{i}: {playlist.getPlaylistName()}")
+    playlistIndex = int(input("Enter what playlist to add to: "))
 
     for i,song in enumerate(allSongsList):
         print(f"{i}: {song.getTuneName()}")
     songIndex = int(input("Enter Which song to add: "))
 
-    playlist.addSong(allSongsList[songIndex])
-
-
-
-    mainMenu()
+    library.getPlaylistByIndex(playlistIndex).addSong(allSongsList[songIndex])
 
 
 def listSongs():
@@ -226,7 +240,7 @@ def deleteSongFromPlaylist():
 
         library.removeSongFromPlaylist(playlist,selection)
 
-    mainMenu()
+
 
 
 def readFromFile():
@@ -268,7 +282,7 @@ def searchYoutube():
                 print("")
                 print('Song Name ', songName, ' not found in file, You cant search if you haven\'t added the song')
                 print("")
-                mainMenu()
+
             else:
                 html = urllib.request.urlopen(
                     "https://www.youtube.com/results?search_query=" + songName.replace(" ", ""))
