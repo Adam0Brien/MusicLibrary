@@ -8,7 +8,7 @@ allSongsList = []
 songsList = []
 
 library = MyMusicLibrary.MyMusicLibrary("Adams Library", playlistList=[], allSongsList=allSongsList)
-playlist1 = Playlist.Playlist("Adams Playlist", songsList)
+
 
 
 def validateInput(choice, min, max):
